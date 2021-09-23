@@ -10,6 +10,8 @@ const imagePlace = require("./utils/imagePlace");
 
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 const publicPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
 const partialPath = path.join(__dirname, "../templates/partials");
@@ -101,6 +103,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is up on port 3000");
+app.listen(PORT, () => {
+  console.log("Server is up on port " + PORT);
 });
